@@ -32,7 +32,7 @@ public class UserValidatorTest {
     @Test
     void givenPassWord_WhenProper_ShouldReturnTrue() {
         Uservalidator uservalidator = new Uservalidator();
-        boolean result = uservalidator.validatePassWord("assasa13");
+        boolean result = uservalidator.validatePassWord("Assasa13");
         Assertions.assertEquals(true, result);
     }
 }
