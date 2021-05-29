@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class UserValidatorTest {
 
+    private static final String[] SAMPLE_EMAILS = new String[]{"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@yahoo.com","abc111@abc.com"};
     @Test
     void givenFirstName_WhenProper_ShouldReturnTrue() {
         Uservalidator uservalidator = new Uservalidator();
@@ -20,8 +21,10 @@ public class UserValidatorTest {
     @Test
     void givenEmail_WhenProper_ShouldReturnTrue() {
         Uservalidator uservalidator = new Uservalidator();
-        boolean result = uservalidator.validateEmailAddress("abc.xyz@bl.co.in");
-        Assertions.assertEquals(true, result);
+        for (String email: SAMPLE_EMAILS) {
+            boolean result = uservalidator.validateEmailAddress(email);
+            Assertions.assertEquals(true, result);
+        }
     }
     @Test
     void givenMobileNumber_WhenProper_ShouldReturnTrue() {
