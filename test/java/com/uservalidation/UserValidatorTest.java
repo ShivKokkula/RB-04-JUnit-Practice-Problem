@@ -17,4 +17,10 @@ public class UserValidatorTest {
         boolean result = uservalidator.validateLastName("Kokkula");
         Assertions.assertEquals(true,result);
     }
+    @Test
+    void givenEmail_WhenProper_ShouldReturnTrue() {
+        Uservalidator uservalidator = new Uservalidator();
+        boolean result = uservalidator.validateEmailAddress("abc.xyz@bl.co.in");
+        Assertions.assertEquals(true, result);
+    }
 }
